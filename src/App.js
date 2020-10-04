@@ -7,6 +7,7 @@ import authors from "./data";
 import Sidebar from "./Sidebar";
 import AuthorList from "./AuthorList";
 
+
 function App() {
   return (
     <div id="app" className="container-fluid">
