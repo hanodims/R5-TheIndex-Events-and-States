@@ -4,7 +4,7 @@ const AuthorCard = props => {
   const author = props.author;
   const authorName = `${author.first_name} ${author.last_name}`;
   return (
-    <div className="col-lg-4 col-md-6 col-12">
+    <div className="col-lg-4 col-md-6 col-12" onClick={() => props.selectAuthor(author)}>
       <div className="card">
         <div className="image">
           <img
@@ -15,7 +15,7 @@ const AuthorCard = props => {
         </div>
         <div className="card-body">
           <h5 className="card-title">
-          <span onClick={() => props.select(author)}>{authorName}</span>
+            <span>{authorName}</span>
           </h5>
           <small className="card-text">{author.books.length} books</small>
         </div>

@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-const SearchBar = () => {
+const SearchBar = (props) => {
   const [query,setQuery] = useState("")
 
-  const handleChange = event => {
-    setQuery(event.target.value)
+const handleChange = event => {
+    setQuery(event.target.value);
+    props.filterAuthors(event.target.value)
   }
     return (
       <div className="form-group col-lg-6 col-12 mx-auto">

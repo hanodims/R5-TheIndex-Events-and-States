@@ -59,7 +59,7 @@ const authors = [
       },
       {
         title: "A Dance With Dragons",
-        color: "white"
+        color: "black"
       }
     ]
   },

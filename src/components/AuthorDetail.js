@@ -4,13 +4,21 @@ import React from "react";
 const AuthorDetail = props => {
     const author = props.author;
     const authorName = `${author.first_name} ${author.last_name}`;
-    const authorBooks = author.books.map(book => (book={book}));
+    const authorBooks = author.books.map(book => (
+        <tr>
+        <td>{book.title}</td>
+        <td>{authorName}</td>
+        <td>
+            <button className="btn" style={{backgroundColor: book.color}}/>
+        </td>
+    </tr>
+    ));
     return (
 
 <div className="author col-xs-10">
     <div>
         <h3>{authorName}</h3>
-        <img src="http://catchingfire.ca/wp-content/uploads/2016/09/question-mark-square-01.png" className="img-thumbnail" alt=""/>
+        <img src={author.imageUrl} className="img-thumbnail" alt=""/>
     </div>
     <table className='mt-3 table'>
         <thead>
@@ -21,20 +29,7 @@ const AuthorDetail = props => {
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>{author.books[0].title}</td>
-                <td>I SHOULD BE A STRING OF THIS OTHER BOOK'S AUTHORS</td>
-                <td>
-                    <button className="btn" style={{backgroundColor: "blue"}}/>
-                </td>
-            </tr>
-            <tr>
-                <td>{author.books[1].title}</td>
-                <td>I SHOULD BE A STRING OF THIS OTHER BOOK'S AUTHORS</td>
-                <td>
-                    <button className="btn" style={{backgroundColor: "red"}}/>
-                </td>
-            </tr>
+            {authorBooks}
         </tbody>
         </table>
 </div>
