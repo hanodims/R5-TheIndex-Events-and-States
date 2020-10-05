@@ -3,14 +3,13 @@ import React from "react";
 
 const AuthorDetail = props => {
     const author = props.author;
-    const authorBooks = author.books.map(book => (
-    <authorBooks key={book.title} book={book} />
-  ));
+    const authorName = `${author.first_name} ${author.last_name}`;
+    const authorBooks = author.books.map(book => (book={book}));
     return (
 
 <div className="author col-xs-10">
     <div>
-        <h3>author.key</h3>
+        <h3>{authorName}</h3>
         <img src="http://catchingfire.ca/wp-content/uploads/2016/09/question-mark-square-01.png" className="img-thumbnail" alt=""/>
     </div>
     <table className='mt-3 table'>
@@ -23,14 +22,14 @@ const AuthorDetail = props => {
         </thead>
         <tbody>
             <tr>
-                <td>authorBooks.key</td>
-                <td>I SHOULD BE A STRING OF THIS BOOK'S AUTHORS</td>
+                <td>{author.books[0].title}</td>
+                <td>I SHOULD BE A STRING OF THIS OTHER BOOK'S AUTHORS</td>
                 <td>
                     <button className="btn" style={{backgroundColor: "blue"}}/>
                 </td>
             </tr>
             <tr>
-                <td>I SHOULD BE ANOTHER BOOK NAME</td>
+                <td>{author.books[1].title}</td>
                 <td>I SHOULD BE A STRING OF THIS OTHER BOOK'S AUTHORS</td>
                 <td>
                     <button className="btn" style={{backgroundColor: "red"}}/>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // Data
 import authors from "./data";
@@ -6,9 +6,14 @@ import authors from "./data";
 // Components
 import Sidebar from "./Sidebar";
 import AuthorList from "./AuthorList";
+import AuthorDetail from "./components/AuthorDetail";
 
 
 function App() {
+  const [currentAuthor, setAuthor] = useState(null);
+  const selectAuthor = author => {
+    setAuthor(author);
+  }
   return (
     <div id="app" className="container-fluid">
       <div className="row">
@@ -16,7 +21,8 @@ function App() {
           <Sidebar />
         </div>
         <div className="content col-10">
-          <AuthorList authors={authors} />
+          <AuthorList authors={authors} select={selectAuthor}/>
+          <AuthorDetail author={currentAuthor} />
         </div>
       </div>
     </div>
