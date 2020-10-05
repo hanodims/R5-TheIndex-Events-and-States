@@ -15,7 +15,7 @@ const AuthorCard = props => {
         </div>
         <div className="card-body">
           <h5 className="card-title">
-            <span onClick={() => props.select(author)}>{authorName}</span>
+          <span onClick={() => props.select(author)}>{authorName}</span>
           </h5>
           <small className="card-text">{author.books.length} books</small>
         </div>

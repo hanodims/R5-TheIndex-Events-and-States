@@ -21,8 +21,10 @@ function App() {
           <Sidebar />
         </div>
         <div className="content col-10">
+          {selectAuthor ? 
+          <AuthorDetail author={currentAuthor} /> : 
           <AuthorList authors={authors} select={selectAuthor}/>
-          <AuthorDetail author={currentAuthor} />
+          }
         </div>
       </div>
     </div>
