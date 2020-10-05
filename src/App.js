@@ -10,6 +10,10 @@ import AuthorDetail from "./components/AuthorDetail";
 
 
 function App() {
+  const filterAuthors = query => { 
+    let filteredauthors = [];
+    filteredauthors = authors.filter((author) => author.includes(query.ToLowerCase()));
+   }
   const [currentAuthor, setAuthor] = useState(null);
   const selectAuthor = author => {
     setAuthor(author);
